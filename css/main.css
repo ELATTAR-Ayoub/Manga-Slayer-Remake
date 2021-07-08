@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fontPrimary: 'El Messiri', sans-serif;
+    --colorPrimary: #fc5423;
+    --colorSecondary: #fc7147;
+    --colorFooterPrimary: #1e1e1e;
+    --fontColorPrimary: #fff;
+    --fontColorSecondary: #fcdbd2;
+    --fontsizePrimary: 25px;
+    --fontsizeSecondary: 18px;
+    --paddingPrimary: 1rem;
+    --paddingSecondary: 1rem;
+}
+
+  /* width */
+::-webkit-scrollbar {
+    width: 7px;
+    padding: 5px;
+    background-color: var(--colorFooterPrimary);
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--colorPrimary); 
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--colorSecondary); 
+}
+
+body {
+    text-transform: capitalize;
+    background-color: var(--colorPrimary);
+    font-family: var(--fontPrimary);
+    background: url(/src/img/orange-sky-bg.png) no-repeat center;
+    background-size: cover;
+}
+
+header, nav, article, aside, footer {
+    padding: var(--paddingPrimary);
+}
+
+/* Global styles */
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 3px solid var(--colorPrimary);
+}
+
+.c-text {
+    text-align: center;
+    font-size: var(--fontsizeSecondary);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    flex: 0 0 10vh;
+    width: 80%;
+    box-shadow: 0px 2px 7px #00000038;
+}
+header .icon-container {
+    display: flex;
+    align-items: center;
+    font-size: var(--fontsizePrimary);
+    cursor: pointer;
+}
+
+header .icon-container img {
+    width: 60px;
+    height: 60px;
+}
+
+nav {
+    width: 30%;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+header a, footer a{
+    text-decoration: none;
+    color: aliceblue;
+    text-shadow: 0px 3px 3px #0000008f;
+    padding: 5px;
+}
+
+nav a:hover, footer a:hover {
+    color: var(--colorPrimary);
+    
+}
+/* nav a:active {
+    
+} */
+
+nav button {
+    display: none;
+}
+
+nav button .icon div {
+    width: 35px;
+    height: 3px;
+    background-color: var(--fontColorPrimary);
+    margin: 6px 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.rotateBaricn .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 5px) ;
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+  
+.rotateBaricn .bar2 {
+    opacity: 0;
+}
+  
+.rotateBaricn .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; 
+    width: 0;
+    position: fixed; 
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: all 0.5s ease-in-out;
+}
+  
+.sidenav a {  
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: var(--fontsizePrimary);
+    color: var(--fontColorPrimary);
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: var(--colorPrimary);
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+article {
+    display: flex;
+    background-color: transparent;
+    color: var(--fontColorPrimary);
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+/* article .info{
+} */
+
+article .showcase {
+    width: 350px;
+    height: 690px;
+    margin: 50px 10rem 50px 0;
+}
+
+article .smartphone {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(/src/img/manga-slayer-bg.jpg) no-repeat center;
+    background-size: cover;
+    box-shadow: 0px 0px 15px 0px #000000cf;
+    border: 16px solid black;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+}
+  
+  /* The horizontal line on the top of the device */
+article .smartphone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+}
+  
+  /* The circle on the bottom of the device */
+article .smartphone:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+}
+
+article .showcase .smartphone video{
+    width: 323px;
+}
+
+article .info h1{
+    font-size: 50px;
+    margin-bottom: 1rem;
+    text-shadow: 0px 3px 5px #000000ad;
+}
+
+article .info p {
+    font-size: var(--fontsizeSecondary);
+    text-shadow: 0px 3px 4px #000000e0;
+}
+
+article .info .download-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+article .info button img{
+    margin-top: 20px;
+    width: 15rem;
+    height: 75px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 7px 0px #0000007a;
+}
+
+aside {
+    flex: 0 0 15vw;
+    background-color: #1e1e1e;
+    box-shadow: 0px 3px 6px 0px #0000009c;
+    color: var(--fontColorSecondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    /* background: url(/src/img/c46aaf4e4b9d147160145f32aea0b53d.jpg) no-repeat center;
+    background-size: cover; */
+    background-color: var(--colorFooterPrimary);
+    box-shadow: 0px 2px 7px #00000038;
+    color: var(--fontColorPrimary);
+    flex: 0 0 auto;
+}
+
+footer a {
+    text-align: center;
+}
+
+footer .footer-info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+}
+
+footer .footer-section h3{
+    width: 100%;
+    color: #f3b989;
+    font-size: calc(var(--fontsizeSecondary) + 5px);
+    border-bottom: 1px solid var(--colorSecondary);
+    text-align: center;
+}
+
+footer .footer-section{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .contacts a:hover{
+    font-size: calc(var(--fontsizeSecondary) - 1.5px);
+}
+
+footer .contacts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer .copyright{
+    border-top: 1px solid var(--fontColorPrimary);
+    padding: 10px;
+}
+
+
+/* @media screen and (max-height: 1024px) {
+    main {flex-direction: column;}
+    aside{order: 3;}
+} */
+
+@media screen and (max-height: 900px) {
+    nav {width: 40%;}
+}
+@media screen and (max-width: 1024px) {
+    main {flex-direction: column;}
+    aside{order: 3;}
+}
+@media screen and (max-width: 768px){
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+    header {
+        width: 100%;
+    }
+    nav {
+        width: auto;
+    }
+    nav ul {
+        display: none;
+        color: aqua;
+    }
+    nav button {
+        display: block;
+    }
+    aside{
+        order: 3;
+    }
+    article {
+        flex-direction: column;
+    }
+    article .showcase {
+        margin: 100px auto;
+    }
+    footer .footer-info {
+        flex-direction: column;
+    }
+    footer .footer-info h3 {
+        margin-bottom: 15px;
+    }
+    footer .footer-section {
+        margin: 15px;
+    }
+    footer .links {
+        order: -1;
+    }
+    footer a {
+        margin-bottom: 15px;
+    }
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: var(--fontsizeSecondary);}
+}
